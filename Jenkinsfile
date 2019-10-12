@@ -1,9 +1,6 @@
 pipeline {
   parameters {
-    string(name: 'REPO', defaultValue:      'https://github.com/alandamodaran/helloWorld.git', description: 'Chart Repository')
-    string(name: 'BRANCH', defaultValue:    'master', description: 'Repository Branch')
     string(name: 'APPLICATION', defaultValue: 'helloWorld', description: 'Name of the application to be deployed')
-    string(name: 'TOMCATHOME', defaultValue:  '/root/apache-tomcat-9.0.26', description: 'Tomcat path where application to be deployed ')
   }
   agent any
 
@@ -45,4 +42,5 @@ pipeline {
 	}
    }
 }
+
 
