@@ -21,7 +21,7 @@ pipeline {
     }
     stage("package") {
       steps {
-        sh "echoi hello "
+        sh "echo hello "
       }
     }
 
