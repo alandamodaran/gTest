@@ -1,6 +1,9 @@
 pipeline {
   parameters {
+    string(name: 'REPO', defaultValue:      'https://github.com/alandamodaran/helloWorld.git', description: 'Chart Repository')
+    string(name: 'BRANCH', defaultValue:    'master', description: 'Repository Branch')
     string(name: 'APPLICATION', defaultValue: 'helloWorld', description: 'Name of the application to be deployed')
+    string(name: 'TOMCATHOME', defaultValue:  '/root/apache-tomcat-9.0.26', description: 'Tomcat path where application to be deployed ')
   }
   agent any
 
@@ -10,24 +13,25 @@ pipeline {
   }
 
   stages {
-    stage("Checkout repo") {
+    stage("STAGE 1 ") {
       steps {
         sh "pwd"
       }
 
     }
-    stage("package") {
+    stage("STAGE 2 ") {
       steps {
-        sh "echo hello "
+        sh date
+        sh "echo  hello "
       }
     }
 
-    stage("upload to nexus - NOT DEVELOPED") {
+    stage("STAGE 3 ") {
       steps {
-        sh "echo deploy to  nexus -- to be developed"
+        sh "echo STAGE 3 "
       }
     }
-    stage("Install in tomcat") {
+    stage("STAGE 4 ") {
       steps {
         sh 'env > env.txt && cat env.txt'
 
@@ -42,6 +46,4 @@ pipeline {
 	}
    }
 }
-
-
 
